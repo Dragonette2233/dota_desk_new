@@ -66,9 +66,13 @@ def loader():
         db.session.flush()
 
         url = "https://api.opendota.com/api/publicMatches"
-        matches: list = requests.get(url).json()
+        matches: list | dict = requests.get(url).json()
 
-        print(matches)
+        if matches.get('error'):
+            app.logger.error(matches['error'])
+            raise SystemExit()
+        
+        # print(matches)
         
         max_match_id = matches[0]["match_id"]  # Set up top id
         info.max_match_id = max_match_id

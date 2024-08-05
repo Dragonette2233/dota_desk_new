@@ -68,9 +68,11 @@ def loader():
         url = "https://api.opendota.com/api/publicMatches"
         matches: list | dict = requests.get(url).json()
 
-        if matches.get('error'):
+        try:
             app.logger.error(matches['error'])
             raise SystemExit()
+        except (AttributeError, KeyError):
+            ...
         
         # print(matches)
         
@@ -98,6 +100,7 @@ def loader():
                     pass
         
         # Decrease min_match_id
+        time.sleep(Static.API_REQUEST_DELAY)
         min_match_id = match['match_id']
         info.min_match_id = min_match_id
         db.session.commit()
@@ -127,6 +130,7 @@ def loader():
                         pass
             
             app.logger.info(f'First loop {min_match_id}')
+            time.sleep(Static.API_REQUEST_DELAY)
             
             if isinstance(match, dict):
                 min_match_id = match["match_id"]
@@ -202,7 +206,7 @@ def loader():
                         # print(f"Exception while parse match {match['match_id']}\n\n{e}")
                         pass
             
-            app.logger.info(f'Reached 2024 loop_1 {min_match_id}')
+            
             # Decrease min_match_id
             if isinstance(match, dict):
                 min_match_id = match['match_id']
@@ -212,8 +216,9 @@ def loader():
                 min_match_start_time = match['start_time']
             
             # Задержка между запросами
-                time.sleep(Static.API_REQUEST_DELAY)
-                
+            time.sleep(Static.API_REQUEST_DELAY)
+            
+            app.logger.info(f'Reached 2024 loop_2 {min_match_id}')
             while min_match_start_time >= Static.UNIX_TIME_2024:  # Iterates since date 01.01.2024
                 url = f"https://api.opendota.com/api/publicMatches?less_than_match_id={min_match_id}"
                 matches: list = requests.get(url).json()
@@ -238,7 +243,7 @@ def loader():
                             pass
                 
                 
-                app.logger.info(f'Reached 2024 loop_2 {min_match_id}')
+                
                 if isinstance(match, dict):
                     min_match_id = match["match_id"]
                     info.min_match_id = min_match_id
@@ -252,7 +257,8 @@ def loader():
             info.reached_2020 = True
             db.session.commit()
         
-        # Infinite loop. 01.01.2021 has been already reached.
+        # Infinite loop. 01.01.2024 has been already reached.
+        app.logger.info(f'Reached 2024 loop_3 {min_match_id}')
         while True:
             # Go up
             min_match_id = max_match_id
@@ -285,8 +291,4 @@ def loader():
             app.logger.info(f'Reached 2024 loop_3 {min_match_id}')
             # Задержка между запросами
             time.sleep(Static.API_REQUEST_DELAY)
-            app.logger.warning('In infinite loop')
-            
-    
-    # Задержка между запросами 45 сек
-    time.sleep()
+            # app.logger.warning('In infinite loop')

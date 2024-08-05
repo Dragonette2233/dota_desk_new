@@ -1,0 +1,5 @@
+.env/
+__pycache__/
+.flaskenv
+app.db
+app.db-journal

@@ -2,6 +2,10 @@
 // https://liquipedia.net/dota2/Void_Spirit
 // https://dota2.fandom.com/wiki/Heroes
 const HEROES_NAMES = {
+
+  // new heroes
+  Muerta: ['муэрта', 'муерта', 'muerta'],
+  'Primal Beast': ['праймал', 'праймал бист', 'primal beast'],
   Earthshaker: ['шейкер', 'earthshaker'],
   Sven: ['свен', 'sven'],
   Tiny: ['тини', 'tiny'],
@@ -140,6 +144,12 @@ const HEROES_NAMES = {
 
 const HEROES_LINKS = {
   // |--------------------------------------------------  Radiant  --------------------------------------------------|
+
+  // new heroes
+
+  Muerta: 'http://wc3.3dn.ru/Dota2/Heroes/Muerta.jpg',
+  'Primal Beast': 'http://wc3.3dn.ru/Dota2/Heroes/Primal_Beast.jpg',
+
   // Strength
   Earthshaker: 'http://wc3.3dn.ru/Dota2/Heroes/Earthshaker.jpg',
   Sven: 'http://wc3.3dn.ru/Dota2/Heroes/Sven.jpg',

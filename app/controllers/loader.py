@@ -71,7 +71,7 @@ def loader():
         try:
             app.logger.error(matches['error'])
             raise SystemExit()
-        except (AttributeError, KeyError):
+        except (AttributeError, KeyError, TypeError):
             ...
         
         # print(matches)
@@ -106,7 +106,7 @@ def loader():
         db.session.commit()
 
         min_match_start_time = match['start_time']
-        while min_match_start_time >= Static.UNIX_TIME_2024:  # Iterates since date 01.01.2024
+        while min_match_start_time >= Static.UNIX_TIME_2024:  # Iterates since date 01.08.2024
             url = f"https://api.opendota.com/api/publicMatches?less_than_match_id={min_match_id}"
             matches: list = requests.get(url).json()
             

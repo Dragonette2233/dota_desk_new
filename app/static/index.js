@@ -148,7 +148,7 @@ const HEROES_LINKS = {
   // new heroes
 
   Muerta: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/muerta.png?',
-  'Primal Beast': 'http://wc3.3dn.ru/Dota2/Heroes/Primal_Beast.jpg',
+  'Primal Beast': 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/primal_beast.png?',
 
   // Strength
   Earthshaker: 'http://wc3.3dn.ru/Dota2/Heroes/Earthshaker.jpg',

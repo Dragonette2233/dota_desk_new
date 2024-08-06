@@ -304,6 +304,9 @@ function onsubmitHandler() {
 }
 
 function onchangeHandler(e, inputName) {
+
+  console.log(inputName, e)
+
   const inputGroup = document.querySelector(`.${inputName}`);
   const input = inputGroup.querySelector('input');
   const img = inputGroup.querySelector('img');
@@ -333,8 +336,11 @@ function onchangeHandler(e, inputName) {
     }
   }
 
+  console.log("im just here")
+
   if (heroExists) {
     img.src = HEROES_LINKS[heroInput];
+    
   } else {
     img.src = 'static/img/alt.jpg';
   }

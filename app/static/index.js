@@ -303,7 +303,6 @@ function onsubmitHandler() {
   })
 }
 
-
 function onchangeHandler(e, inputName) {
   const inputGroup = document.querySelector(`.${inputName}`);
   const input = inputGroup.querySelector('input');
@@ -311,25 +310,21 @@ function onchangeHandler(e, inputName) {
   let heroInput = e.value.trim().toLowerCase();
   let heroExists = false;
 
-  // Exact match
   for (let heroName of Object.keys(HEROES_NAMES)) {
-      if (HEROES_NAMES[heroName].includes(heroInput)) {
-          heroInput = heroName;
-          heroExists = true;
-          // Change text in the input
-          input.value = heroInput;
-          break;
-        }
+    if (HEROES_NAMES[heroName].includes(heroInput)) {
+      heroInput = heroName;
+      heroExists = true;
+      input.value = heroInput;
+      break;
+    }
   }
 
-  // If no exact match, search by prefix
   if (!heroExists && heroInput.length > 0) {
     for (let heroName of Object.keys(HEROES_NAMES)) {
       for (let alias of HEROES_NAMES[heroName]) {
         if (alias.startsWith(heroInput)) {
           heroInput = heroName;
           heroExists = true;
-          // Change text in the input
           input.value = heroInput;
           break;
         }
@@ -338,13 +333,98 @@ function onchangeHandler(e, inputName) {
     }
   }
 
-  // Change image src
   if (heroExists) {
     img.src = HEROES_LINKS[heroInput];
   } else {
     img.src = 'static/img/alt.jpg';
   }
 }
+
+function onInputHandler(e, inputName) {
+  const dropdown = document.getElementById(`dropdown-${inputName}`);
+  const heroInput = e.value.trim().toLowerCase();
+  dropdown.innerHTML = '';
+
+  if (heroInput.length > 0) {
+    const matches = [];
+
+    for (let heroName of Object.keys(HEROES_NAMES)) {
+      for (let alias of HEROES_NAMES[heroName]) {
+        if (alias.startsWith(heroInput)) {
+          matches.push(heroName);
+          break;
+        }
+      }
+    }
+
+    matches.forEach(match => {
+      const item = document.createElement('li');
+      item.className = 'dropdown-item';
+      item.textContent = match;
+      item.onclick = () => {
+        e.value = match;
+        onchangeHandler(e, inputName);
+        dropdown.innerHTML = '';
+      };
+      dropdown.appendChild(item);
+    });
+
+    dropdown.style.display = matches.length > 0 ? 'block' : 'none';
+  } else {
+    dropdown.style.display = 'none';
+  }
+}
+
+document.addEventListener('click', (event) => {
+  const dropdowns = document.querySelectorAll('.dropdown-menu');
+  dropdowns.forEach(dropdown => {
+    if (!dropdown.contains(event.target)) {
+      dropdown.style.display = 'none';
+    }
+  });
+});
+
+// function onchangeHandler(e, inputName) {
+//   const inputGroup = document.querySelector(`.${inputName}`);
+//   const input = inputGroup.querySelector('input');
+//   const img = inputGroup.querySelector('img');
+//   let heroInput = e.value.trim().toLowerCase();
+//   let heroExists = false;
+
+//   // Exact match
+//   for (let heroName of Object.keys(HEROES_NAMES)) {
+//       if (HEROES_NAMES[heroName].includes(heroInput)) {
+//           heroInput = heroName;
+//           heroExists = true;
+//           // Change text in the input
+//           input.value = heroInput;
+//           break;
+//         }
+//   }
+
+//   // If no exact match, search by prefix
+//   if (!heroExists && heroInput.length > 0) {
+//     for (let heroName of Object.keys(HEROES_NAMES)) {
+//       for (let alias of HEROES_NAMES[heroName]) {
+//         if (alias.startsWith(heroInput)) {
+//           heroInput = heroName;
+//           heroExists = true;
+//           // Change text in the input
+//           input.value = heroInput;
+//           break;
+//         }
+//       }
+//       if (heroExists) break;
+//     }
+//   }
+
+//   // Change image src
+//   if (heroExists) {
+//     img.src = HEROES_LINKS[heroInput];
+//   } else {
+//     img.src = 'static/img/alt.jpg';
+//   }
+// }
 
 // function onchangeHandler(e, inputName) {
 //   const inputGroup = document.querySelector(`.${inputName}`)

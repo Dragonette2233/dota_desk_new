@@ -2,3 +2,33 @@
     width: 90px;
     height: 50px;
 }
+
+.input-group {
+    position: relative; /* Чтобы dropdown-menu было позиционировано относительно input-group */
+  }
+  
+  .dropdown-menu {
+    display: none; /* По умолчанию скрыто */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 100%; /* Смещаем меню ниже input */
+    left: 0; /* Выравниваем меню по левому краю input */
+    z-index: 1000; /* Устанавливаем индекс слоя, чтобы меню было поверх других элементов */
+    background-color: #343a40; /* Фон, чтобы совпадал с темной темой */
+    color: white; /* Цвет текста */
+    width: 100%; /* Ширина совпадает с инпутом */
+    padding: 0; /* Без отступов */
+    margin: 0; /* Без внешних отступов */
+    border: 1px solid #ced4da; /* Граница */
+    border-radius: 0.25rem; /* Скругление углов */
+  }
+  
+  .dropdown-item {
+    padding: 0.5rem 1rem; /* Отступы */
+    cursor: pointer; /* Курсор указывает, что элемент кликабелен */
+  }
+  
+  .dropdown-item:hover, .dropdown-item:focus {
+    background-color: #495057; /* Темный фон при наведении */
+    color: white; /* Цвет текста при наведении */
+  }
+  

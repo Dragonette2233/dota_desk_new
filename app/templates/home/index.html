@@ -21,100 +21,117 @@
       </div>
       
       {# #333333  #27282d - инпуты #212226 - фон #}
+
+      <!-- Test -->
+
       <div class="row mb-1 justify-content-around">
         <div class="col-3">
-          <div class="input-group A1">
+          <div class="input-group A1 position-relative">
             <span class="input-group-text bg-dark border-secondary">
               <img class="hero" src="{{ url_for('static', filename='img/alt.jpg') }}" alt="hero">
             </span>
-            <input onchange="onchangeHandler(this, 'A1')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="A1" value="{{ inputs['A1'] }}" aria-label="A1">
+            <input onchange="onchangeHandler(this, 'A1')" oninput="onInputHandler(this, 'A1')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="A1" value="{{ inputs['A1'] }}" aria-label="A1">
+            <ul class="dropdown-menu bg-secondary text-white border-secondary position-absolute w-50" id="dropdown-A1"></ul>
           </div>
         </div>
         <div class="col-3">
-          <div class="input-group B1">
+          <div class="input-group B1 position-relative">
             <span class="input-group-text bg-dark border-secondary">
               <img class="hero" src="{{ url_for('static', filename='img/alt.jpg') }}" alt="hero">
             </span>
-            <input onchange="onchangeHandler(this, 'B1')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="B1" value="{{ inputs['B1'] }}" aria-label="B1">
+            <input onchange="onchangeHandler(this, 'B1')" oninput="onInputHandler(this, 'B1')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="B1" value="{{ inputs['B1'] }}" aria-label="B1">
+            <ul class="dropdown-menu bg-secondary text-white border-secondary position-absolute w-50" id="dropdown-B1"></ul>
           </div>
         </div>
       </div>
 
       <div class="row mb-1 justify-content-around">
         <div class="col-3">
-          <div class="input-group A2">
+          <div class="input-group A2 position-relative">
             <span class="input-group-text bg-dark border-secondary">
               <img class="hero" src="{{ url_for('static', filename='img/alt.jpg') }}" alt="hero">
             </span>
-            <input onchange="onchangeHandler(this, 'A2')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="A2" value="{{ inputs['A2'] }}" aria-label="A2">
+            <input onchange="onchangeHandler(this, 'A2')" oninput="onInputHandler(this, 'A2')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="A2" value="{{ inputs['A2'] }}" aria-label="A2">
+            <ul class="dropdown-menu bg-secondary text-white border-secondary position-absolute w-50" id="dropdown-A2"></ul>
           </div>
         </div>
         <div class="col-3">
-          <div class="input-group B2">
+          <div class="input-group B1 position-relative">
             <span class="input-group-text bg-dark border-secondary">
               <img class="hero" src="{{ url_for('static', filename='img/alt.jpg') }}" alt="hero">
             </span>
-            <input onchange="onchangeHandler(this, 'B2')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="B2" value="{{ inputs['B2'] }}" aria-label="B2">
+            <input onchange="onchangeHandler(this, 'B2')" oninput="onInputHandler(this, 'B2')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="B2" value="{{ inputs['B2'] }}" aria-label="B2">
+            <ul class="dropdown-menu bg-secondary text-white border-secondary position-absolute w-50" id="dropdown-B2"></ul>
           </div>
         </div>
       </div>
 
       <div class="row mb-1 justify-content-around">
         <div class="col-3">
-          <div class="input-group A3">
+          <div class="input-group A3 position-relative">
             <span class="input-group-text bg-dark border-secondary">
               <img class="hero" src="{{ url_for('static', filename='img/alt.jpg') }}" alt="hero">
             </span>
-            <input onchange="onchangeHandler(this, 'A3')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="A3" value="{{ inputs['A3'] }}" aria-label="A3">
+            <input onchange="onchangeHandler(this, 'A3')" oninput="onInputHandler(this, 'A3')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="A3" value="{{ inputs['A3'] }}" aria-label="A3">
+            <ul class="dropdown-menu bg-secondary text-white border-secondary position-absolute w-50" id="dropdown-A3"></ul>
           </div>
         </div>
         <div class="col-3">
-          <div class="input-group B3">
+          <div class="input-group B1 position-relative">
             <span class="input-group-text bg-dark border-secondary">
               <img class="hero" src="{{ url_for('static', filename='img/alt.jpg') }}" alt="hero">
             </span>
-            <input onchange="onchangeHandler(this, 'B3')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="B3" value="{{ inputs['B3'] }}" aria-label="B3">
+            <input onchange="onchangeHandler(this, 'B3')" oninput="onInputHandler(this, 'B3')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="B3" value="{{ inputs['B3'] }}" aria-label="B3">
+            <ul class="dropdown-menu bg-secondary text-white border-secondary position-absolute w-50" id="dropdown-B3"></ul>
           </div>
         </div>
       </div>
 
       <div class="row mb-1 justify-content-around">
         <div class="col-3">
-          <div class="input-group A4">
+          <div class="input-group A4 position-relative">
             <span class="input-group-text bg-dark border-secondary">
               <img class="hero" src="{{ url_for('static', filename='img/alt.jpg') }}" alt="hero">
             </span>
-            <input onchange="onchangeHandler(this, 'A4')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="A4" value="{{ inputs['A4'] }}" aria-label="A4">
+            <input onchange="onchangeHandler(this, 'A4')" oninput="onInputHandler(this, 'A4')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="A4" value="{{ inputs['A4'] }}" aria-label="A4">
+            <ul class="dropdown-menu bg-secondary text-white border-secondary position-absolute w-50" id="dropdown-A4"></ul>
           </div>
         </div>
         <div class="col-3">
-          <div class="input-group B4">
+          <div class="input-group B1 position-relative">
             <span class="input-group-text bg-dark border-secondary">
               <img class="hero" src="{{ url_for('static', filename='img/alt.jpg') }}" alt="hero">
             </span>
-            <input onchange="onchangeHandler(this, 'B4')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="B4" value="{{ inputs['B4'] }}" aria-label="B4">
+            <input onchange="onchangeHandler(this, 'B4')" oninput="onInputHandler(this, 'B4')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="B4" value="{{ inputs['B4'] }}" aria-label="B4">
+            <ul class="dropdown-menu bg-secondary text-white border-secondary position-absolute w-50" id="dropdown-B4"></ul>
           </div>
         </div>
       </div>
 
-      <div class="row mb-3 justify-content-around">
+      <div class="row mb-1 justify-content-around">
         <div class="col-3">
-          <div class="input-group A5">
+          <div class="input-group A5 position-relative">
             <span class="input-group-text bg-dark border-secondary">
               <img class="hero" src="{{ url_for('static', filename='img/alt.jpg') }}" alt="hero">
             </span>
-            <input onchange="onchangeHandler(this, 'A5')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="A5" value="{{ inputs['A5'] }}" aria-label="A5">
+            <input onchange="onchangeHandler(this, 'A5')" oninput="onInputHandler(this, 'A5')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="A5" value="{{ inputs['A5'] }}" aria-label="A5">
+            <ul class="dropdown-menu bg-secondary text-white border-secondary position-absolute w-50" id="dropdown-A5"></ul>
           </div>
         </div>
         <div class="col-3">
-          <div class="input-group B5">
+          <div class="input-group B1 position-relative">
             <span class="input-group-text bg-dark border-secondary">
               <img class="hero" src="{{ url_for('static', filename='img/alt.jpg') }}" alt="hero">
             </span>
-            <input onchange="onchangeHandler(this, 'B5')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="B5" value="{{ inputs['B5'] }}" aria-label="B5">
+            <input onchange="onchangeHandler(this, 'B5')" oninput="onInputHandler(this, 'B5')" type="text" class="form-control bg-dark text-white border-secondary" placeholder="Выбор героя" name="B5" value="{{ inputs['B5'] }}" aria-label="B5">
+            <ul class="dropdown-menu bg-secondary text-white border-secondary position-absolute w-50" id="dropdown-B5"></ul>
           </div>
         </div>
       </div>
+      
+
+      
+      <!-- Test END -->
 
       <div class="row mb-3 justify-content-around">
         <div class="col-3"></div>

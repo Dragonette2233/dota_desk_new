@@ -40,6 +40,9 @@ def index():
                     team_b.add(str(hero.id))
                 inputs[k] = v  # Fill into inputs
         
+        app.logger.info("Team A %s", str(team_a))
+        app.logger.info("Team B %s", str(team_b))
+        
         month_ago_time = datetime.now() - timedelta(days=30)
         month_ago_time = int(month_ago_time.timestamp())
         
@@ -49,11 +52,11 @@ def index():
             radiant_team = set(match.radiant_team.split())
             dire_team = set(match.dire_team.split())
             
-            if team_a == radiant_team and team_b == dire_team:
+            if team_a.issubset(radiant_team) and team_b.issubset(dire_team):
                 if match.radiant_win:
                     stats["wins"] += 1
                 stats["matches"] += 1
-            elif team_a == dire_team and team_b == radiant_team:
+            elif team_a.issubset(dire_team) and team_b.issubset(radiant_team):
                 if not match.radiant_win:
                     stats["wins"] += 1
                 stats["matches"] += 1

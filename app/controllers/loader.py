@@ -48,6 +48,11 @@ def match_fits_conditions(match) -> bool:
             )
 
 def loader():
+    
+    if Static.DEBUG_MODE:
+        while True:
+            app.logger.info("Debugging mode | [loader] disabled")
+            time.sleep(1200)
 
     app.app_context().push()
     info = Info.query.first()

@@ -37,7 +37,7 @@ db.create_all()
 
 # Models
 from app.models.match import Match
-from app.models.hero import Hero
+from app.models.hero import Hero, update_db_with_heroes
 from app.models.info import Info
 
 # If info doesn't exist
@@ -45,13 +45,17 @@ if not Info.query.first():
     db.session.add(Info(min_match_id=None, max_match_id=None, reached_2020=False))
     db.session.commit()
 
-
+# If heroes doesn't exist
+if not Hero.query.first():
+    update_db_with_heroes()
+    
 # Setting up 2 threads: Flask app and public matches loader
 # flask_thread = Thread(target=run_app)
 loader_thread = Thread(target=loader)
 
 # flask_thread.start()
 loader_thread.start()
+app.logger.info("Thread [loader] started")
 
 
 if __name__ == "__main__":

@@ -4,3 +4,4 @@ __pycache__/
 app.db
 app.db-journal
 dotadesk.zip
+detached.py

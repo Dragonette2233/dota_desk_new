@@ -147,7 +147,7 @@ const HEROES_LINKS = {
 
   // new heroes
 
-  Muerta: 'http://wc3.3dn.ru/Dota2/Heroes/Muerta.jpg',
+  Muerta: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/muerta.png?',
   'Primal Beast': 'http://wc3.3dn.ru/Dota2/Heroes/Primal_Beast.jpg',
 
   // Strength
@@ -303,30 +303,73 @@ function onsubmitHandler() {
   })
 }
 
-function onchangeHandler(e, inputName) {
-  const inputGroup = document.querySelector(`.${inputName}`)
 
-  // If heroName exists change input to main name
-  let heroInput = e.value.trim()
-  let heroExists = false
+function onchangeHandler(e, inputName) {
+  const inputGroup = document.querySelector(`.${inputName}`);
+  const input = inputGroup.querySelector('input');
+  const img = inputGroup.querySelector('img');
+  let heroInput = e.value.trim().toLowerCase();
+  let heroExists = false;
+
+  // Exact match
   for (let heroName of Object.keys(HEROES_NAMES)) {
-    if (HEROES_NAMES[heroName].includes(heroInput.toLowerCase())) {
-        heroInput = heroName
-        heroExists = true
-        // Change text in the input
-        const input = inputGroup.querySelector(`input`)
-        input.value = heroInput
-        break
+      if (HEROES_NAMES[heroName].includes(heroInput)) {
+          heroInput = heroName;
+          heroExists = true;
+          // Change text in the input
+          input.value = heroInput;
+          break;
+        }
+  }
+
+  // If no exact match, search by prefix
+  if (!heroExists && heroInput.length > 0) {
+    for (let heroName of Object.keys(HEROES_NAMES)) {
+      for (let alias of HEROES_NAMES[heroName]) {
+        if (alias.startsWith(heroInput)) {
+          heroInput = heroName;
+          heroExists = true;
+          // Change text in the input
+          input.value = heroInput;
+          break;
+        }
+      }
+      if (heroExists) break;
     }
   }
+
   // Change image src
-  const img = inputGroup.querySelector('img')
   if (heroExists) {
-    img.src = HEROES_LINKS[heroInput]
+    img.src = HEROES_LINKS[heroInput];
   } else {
-    img.src = 'static/img/alt.jpg'
+    img.src = 'static/img/alt.jpg';
   }
 }
+
+// function onchangeHandler(e, inputName) {
+//   const inputGroup = document.querySelector(`.${inputName}`)
+
+//   // If heroName exists change input to main name
+//   let heroInput = e.value.trim()
+//   let heroExists = false
+//   for (let heroName of Object.keys(HEROES_NAMES)) {
+//     if (HEROES_NAMES[heroName].includes(heroInput.toLowerCase())) {
+//         heroInput = heroName
+//         heroExists = true
+//         // Change text in the input
+//         const input = inputGroup.querySelector(`input`)
+//         input.value = heroInput
+//         break
+//     }
+//   }
+//   // Change image src
+//   const img = inputGroup.querySelector('img')
+//   if (heroExists) {
+//     img.src = HEROES_LINKS[heroInput]
+//   } else {
+//     img.src = 'static/img/alt.jpg'
+//   }
+// }
 
 // After loading window Checks if inputs were filled
 window.onload = function () {

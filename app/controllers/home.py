@@ -40,8 +40,8 @@ def index():
                     team_b.add(str(hero.id))
                 inputs[k] = v  # Fill into inputs
         
-        app.logger.info("Team A %s", str(team_a))
-        app.logger.info("Team B %s", str(team_b))
+        # app.logger.info("Team A %s", str(team_a))
+        # app.logger.info("Team B %s", str(team_b))
         
         month_ago_time = datetime.now() - timedelta(days=30)
         month_ago_time = int(month_ago_time.timestamp())

@@ -9,13 +9,11 @@
 5. Настраиваем логи  
     `gunicorn --access-logfile logsaccess.log --error-logfile logserr.log myapp:app`
 5. Запускаем приложение через gunicorn  
-    `gunicorn -w 4 -b 0.0.0.0:8000 app:app`
+    `gunicorn -c gunicorn_config app:app
 
 
 Основной конфиг для работы приложения в файле config.py -> Static()  
   
 API_REQUEST_DELAY - задержка между запросами в API OpenDota  
-
-UNIX_TIME_2024 - время, с которого начинает сбор матчей 
- 
+UNIX_TIME_2024 - время, с которого начинает сбор матчей
 AVG_RANK_REQUIRE - минимальный средний ранг по которому парсятся игры  

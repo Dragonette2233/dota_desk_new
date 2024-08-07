@@ -6,3 +6,5 @@ app.db-journal
 dotadesk.zip
 detached.py
 loader_depr.py
+logserr.log
+logsaccess.log

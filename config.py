@@ -11,7 +11,7 @@ class Config(object):
 	APP_NAME = os.environ.get('APP_NAME') or 'Dota Deck Stats'
 
 class Static:
-    API_REQUEST_DELAY = 45
+    API_REQUEST_DELAY = 50
     UNIX_TIME_2024 = 1722470400 # 01.08.2024
     AVG_RANK_REQUIRE = 70
     DEBUG_MODE = False

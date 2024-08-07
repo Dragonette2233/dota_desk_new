@@ -1,5 +1,5 @@
 1. Клонируем репозиторий
-    <code>git clone https://github.com/Dragonette2233/dota_desk_new</code>
+    ``git clone https://github.com/Dragonette2233/dota_desk_new``
 2. Создаем виртуальное окружение Python: 
     `python3 -m venv .env`
 3. Активируем окружение: 

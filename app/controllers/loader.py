@@ -52,15 +52,23 @@ def add_match_to_db(match):
         app.logger.warning(f"Exception in parsing | {e}")
 
 def fetch_matches(url) -> dict:
+    
+    # Задержка перед каждым запросом
+    time.sleep(Static.API_REQUEST_DELAY)
+    
     while True:
-        result = requests.get(url).json()
+        result = requests.get(url)
+        status = result.status_code
+        body = result.json()
+        
         
         # Устанавливаем задержку если в запросе ошибка (например израсходован лимит)
         try:
-            app.logger.error(result['error'] + " cooldown 5min")
+            app.logger.error(body['error'] + " cooldown 5min")
+            app.logger.error(status)
             time.sleep(360)
         except (AttributeError, KeyError, TypeError):
-            return result
+            return body
         
         
     
@@ -80,7 +88,6 @@ def main_loop(info, min_match_start_time, min_match_id):
             info.min_match_id = min_match_id
             min_match_start_time = matches[-1]["start_time"]
             db.session.commit()
-        time.sleep(Static.API_REQUEST_DELAY)
     info.reached_2020 = True
     db.session.commit()
 
@@ -96,7 +103,6 @@ def infinite_loop(info, max_match_id):
         for match in matches:
             if match_fits_conditions(match):
                 add_match_to_db(match)
-        time.sleep(Static.API_REQUEST_DELAY)
 
 def loader():
     if Static.DEBUG_MODE:

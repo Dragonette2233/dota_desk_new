@@ -1,0 +1,520 @@
+[2024-08-08 21:28:43 +0300] [3053] [DEBUG] Current configuration:
+  config: gunicorn_config.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/kalicore/workflow/dota_flask/dota-deck-stats-master
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: logsaccess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logerr.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb6e0ab07c0>
+  on_reload: <function OnReload.on_reload at 0x7fb6e0ab0900>
+  when_ready: <function WhenReady.when_ready at 0x7fb6e0ab0a40>
+  pre_fork: <function Prefork.pre_fork at 0x7fb6e0ab0b80>
+  post_fork: <function Postfork.post_fork at 0x7fb6e0ab0cc0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb6e0ab0e00>
+  worker_int: <function WorkerInt.worker_int at 0x7fb6e0ab0f40>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb6e0ab1080>
+  pre_exec: <function PreExec.pre_exec at 0x7fb6e0ab11c0>
+  pre_request: <function PreRequest.pre_request at 0x7fb6e0ab1300>
+  post_request: <function PostRequest.post_request at 0x7fb6e0ab13a0>
+  child_exit: <function ChildExit.child_exit at 0x7fb6e0ab14e0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb6e0ab1620>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb6e0ab1760>
+  on_exit: <function OnExit.on_exit at 0x7fb6e0ab18a0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fb6e0ab1a80>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-08-08 21:28:43 +0300] [3053] [INFO] Starting gunicorn 22.0.0
+[2024-08-08 21:28:43 +0300] [3053] [DEBUG] Arbiter booted
+[2024-08-08 21:28:43 +0300] [3053] [INFO] Listening at: http://0.0.0.0:8000 (3053)
+[2024-08-08 21:28:43 +0300] [3053] [INFO] Using worker: sync
+[2024-08-08 21:28:43 +0300] [3054] [INFO] Booting worker with pid: 3054
+[2024-08-08 21:28:43 +0300] [3055] [INFO] Booting worker with pid: 3055
+[2024-08-08 21:28:43 +0300] [3056] [INFO] Booting worker with pid: 3056
+[2024-08-08 21:28:43 +0300] [3057] [INFO] Booting worker with pid: 3057
+[2024-08-08 21:28:43 +0300] [3053] [DEBUG] 4 workers
+[2024-08-08 21:28:52 +0300] [3053] [INFO] Handling signal: int
+[2024-08-08 21:28:52 +0300] [3055] [INFO] Worker exiting (pid: 3055)
+[2024-08-08 21:28:52 +0300] [3054] [INFO] Worker exiting (pid: 3054)
+[2024-08-08 21:28:52 +0300] [3056] [INFO] Worker exiting (pid: 3056)
+[2024-08-08 21:28:52 +0300] [3057] [INFO] Worker exiting (pid: 3057)
+[2024-08-08 21:28:53 +0300] [3053] [INFO] Shutting down: Master
+[2024-08-08 21:30:13 +0300] [3222] [DEBUG] Current configuration:
+  config: gunicorn_config.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/kalicore/workflow/dota_flask/dota-deck-stats-master
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: logsaccess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logerr.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f60aac947c0>
+  on_reload: <function OnReload.on_reload at 0x7f60aac94900>
+  when_ready: <function WhenReady.when_ready at 0x7f60aac94a40>
+  pre_fork: <function Prefork.pre_fork at 0x7f60aac94b80>
+  post_fork: <function Postfork.post_fork at 0x7f60aac94cc0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f60aac94e00>
+  worker_int: <function WorkerInt.worker_int at 0x7f60aac94f40>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f60aac95080>
+  pre_exec: <function PreExec.pre_exec at 0x7f60aac951c0>
+  pre_request: <function PreRequest.pre_request at 0x7f60aac95300>
+  post_request: <function PostRequest.post_request at 0x7f60aac953a0>
+  child_exit: <function ChildExit.child_exit at 0x7f60aac954e0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f60aac95620>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f60aac95760>
+  on_exit: <function OnExit.on_exit at 0x7f60aac958a0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f60aac95a80>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-08-08 21:30:13 +0300] [3222] [INFO] Starting gunicorn 22.0.0
+[2024-08-08 21:30:13 +0300] [3222] [DEBUG] Arbiter booted
+[2024-08-08 21:30:13 +0300] [3222] [INFO] Listening at: http://0.0.0.0:8000 (3222)
+[2024-08-08 21:30:13 +0300] [3222] [INFO] Using worker: sync
+[2024-08-08 21:30:13 +0300] [3223] [INFO] Booting worker with pid: 3223
+[2024-08-08 21:30:13 +0300] [3224] [INFO] Booting worker with pid: 3224
+[2024-08-08 21:30:13 +0300] [3225] [INFO] Booting worker with pid: 3225
+[2024-08-08 21:30:13 +0300] [3226] [INFO] Booting worker with pid: 3226
+[2024-08-08 21:30:13 +0300] [3222] [DEBUG] 4 workers
+[2024-08-08 21:30:15 +0300] [3222] [INFO] Handling signal: int
+[2024-08-08 21:30:15 +0300] [3223] [INFO] Worker exiting (pid: 3223)
+[2024-08-08 21:30:15 +0300] [3224] [INFO] Worker exiting (pid: 3224)
+[2024-08-08 21:30:15 +0300] [3225] [INFO] Worker exiting (pid: 3225)
+[2024-08-08 21:30:15 +0300] [3226] [INFO] Worker exiting (pid: 3226)
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+    lock.acquire()
+    lock.acquire()
+    lock.acquire()
+    lock.acquire()
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+    sys.exit(0)
+    sys.exit(0)
+    sys.exit(0)
+SystemExit: 0
+    sys.exit(0)
+SystemExit: 0
+SystemExit: 0
+SystemExit: 0
+[2024-08-08 21:30:16 +0300] [3222] [ERROR] Worker (pid:3223) was sent SIGINT!
+[2024-08-08 21:30:16 +0300] [3222] [ERROR] Worker (pid:3225) was sent SIGINT!
+[2024-08-08 21:30:16 +0300] [3222] [ERROR] Worker (pid:3224) was sent SIGINT!
+[2024-08-08 21:30:16 +0300] [3222] [ERROR] Worker (pid:3226) was sent SIGINT!
+[2024-08-08 21:30:16 +0300] [3222] [INFO] Shutting down: Master
+[2024-08-08 21:30:31 +0300] [3306] [DEBUG] Current configuration:
+  config: gunicorn_config.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/kalicore/workflow/dota_flask/dota-deck-stats-master
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: logsaccess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logerr.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fefe4f247c0>
+  on_reload: <function OnReload.on_reload at 0x7fefe4f24900>
+  when_ready: <function WhenReady.when_ready at 0x7fefe4f24a40>
+  pre_fork: <function Prefork.pre_fork at 0x7fefe4f24b80>
+  post_fork: <function Postfork.post_fork at 0x7fefe4f24cc0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fefe4f24e00>
+  worker_int: <function WorkerInt.worker_int at 0x7fefe4f24f40>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fefe4f25080>
+  pre_exec: <function PreExec.pre_exec at 0x7fefe4f251c0>
+  pre_request: <function PreRequest.pre_request at 0x7fefe4f25300>
+  post_request: <function PostRequest.post_request at 0x7fefe4f253a0>
+  child_exit: <function ChildExit.child_exit at 0x7fefe4f254e0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fefe4f25620>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fefe4f25760>
+  on_exit: <function OnExit.on_exit at 0x7fefe4f258a0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fefe4f25a80>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-08-08 21:30:31 +0300] [3306] [INFO] Starting gunicorn 22.0.0
+[2024-08-08 21:30:31 +0300] [3306] [DEBUG] Arbiter booted
+[2024-08-08 21:30:31 +0300] [3306] [INFO] Listening at: http://0.0.0.0:8000 (3306)
+[2024-08-08 21:30:31 +0300] [3306] [INFO] Using worker: sync
+[2024-08-08 21:30:31 +0300] [3307] [INFO] Booting worker with pid: 3307
+[2024-08-08 21:30:31 +0300] [3308] [INFO] Booting worker with pid: 3308
+[2024-08-08 21:30:31 +0300] [3309] [INFO] Booting worker with pid: 3309
+[2024-08-08 21:30:31 +0300] [3310] [INFO] Booting worker with pid: 3310
+[2024-08-08 21:30:31 +0300] [3306] [DEBUG] 4 workers
+[2024-08-08 21:30:35 +0300] [3306] [INFO] Handling signal: int
+[2024-08-08 21:30:35 +0300] [3308] [INFO] Worker exiting (pid: 3308)
+[2024-08-08 21:30:35 +0300] [3309] [INFO] Worker exiting (pid: 3309)
+[2024-08-08 21:30:35 +0300] [3307] [INFO] Worker exiting (pid: 3307)
+[2024-08-08 21:30:35 +0300] [3310] [INFO] Worker exiting (pid: 3310)
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+    lock.acquire()
+    lock.acquire()
+    lock.acquire()
+    lock.acquire()
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+    sys.exit(0)
+    sys.exit(0)
+SystemExit: 0
+    sys.exit(0)
+SystemExit: 0
+    sys.exit(0)
+SystemExit: 0
+SystemExit: 0
+[2024-08-08 21:30:36 +0300] [3306] [INFO] Shutting down: Master
+[2024-08-08 21:31:38 +0300] [3513] [DEBUG] Current configuration:
+  config: gunicorn_config.py
+  wsgi_app: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/kalicore/workflow/dota_flask/dota-deck-stats-master
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: logsaccess.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logerr.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f799169c7c0>
+  on_reload: <function OnReload.on_reload at 0x7f799169c900>
+  when_ready: <function WhenReady.when_ready at 0x7f799169ca40>
+  pre_fork: <function Prefork.pre_fork at 0x7f799169cb80>
+  post_fork: <function Postfork.post_fork at 0x7f799169ccc0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f799169ce00>
+  worker_int: <function WorkerInt.worker_int at 0x7f799169cf40>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f799169d080>
+  pre_exec: <function PreExec.pre_exec at 0x7f799169d1c0>
+  pre_request: <function PreRequest.pre_request at 0x7f799169d300>
+  post_request: <function PostRequest.post_request at 0x7f799169d3a0>
+  child_exit: <function ChildExit.child_exit at 0x7f799169d4e0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f799169d620>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f799169d760>
+  on_exit: <function OnExit.on_exit at 0x7f799169d8a0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f799169da80>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-08-08 21:31:38 +0300] [3513] [INFO] Starting gunicorn 22.0.0
+[2024-08-08 21:31:38 +0300] [3513] [DEBUG] Arbiter booted
+[2024-08-08 21:31:38 +0300] [3513] [INFO] Listening at: http://0.0.0.0:8000 (3513)
+[2024-08-08 21:31:38 +0300] [3513] [INFO] Using worker: sync
+[2024-08-08 21:31:38 +0300] [3514] [INFO] Booting worker with pid: 3514
+[2024-08-08 21:31:38 +0300] [3515] [INFO] Booting worker with pid: 3515
+[2024-08-08 21:31:38 +0300] [3516] [INFO] Booting worker with pid: 3516
+[2024-08-08 21:31:38 +0300] [3517] [INFO] Booting worker with pid: 3517
+[2024-08-08 21:31:38 +0300] [3513] [DEBUG] 4 workers
+[2024-08-08 21:31:43 +0300] [3513] [INFO] Handling signal: int
+[2024-08-08 21:31:43 +0300] [3515] [INFO] Worker exiting (pid: 3515)
+[2024-08-08 21:31:43 +0300] [3514] [INFO] Worker exiting (pid: 3514)
+[2024-08-08 21:31:43 +0300] [3517] [INFO] Worker exiting (pid: 3517)
+[2024-08-08 21:31:43 +0300] [3516] [INFO] Worker exiting (pid: 3516)
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/threading.py", line 1590, in _shutdown
+    lock.acquire()
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+    lock.acquire()
+    lock.acquire()
+    lock.acquire()
+    sys.exit(0)
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+  File "/home/kalicore/workflow/dota_flask/dota-deck-stats-master/.env/lib/python3.11/site-packages/gunicorn/workers/base.py", line 198, in handle_quit
+SystemExit: 0
+    sys.exit(0)
+    sys.exit(0)
+    sys.exit(0)
+SystemExit: 0
+SystemExit: 0
+SystemExit: 0
+[2024-08-08 21:31:44 +0300] [3513] [INFO] Shutting down: Master

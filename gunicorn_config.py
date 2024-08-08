@@ -3,3 +3,4 @@ loglevel = "debug"
 accesslog = "logsaccess.log"
 errorlog = "logerr.log"
 workers = 4
+capture_output = True

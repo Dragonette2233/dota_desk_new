@@ -54,24 +54,24 @@ def add_match_to_db(match):
 def fetch_matches(url) -> dict:
     
     # Задержка перед каждым запросом
-    time.sleep(Static.API_REQUEST_DELAY)
+    
     
     while True:
         result = requests.get(url)
         status = result.status_code
         body = result.json()
+        app.logger.info(status)
+        match status:
+            case 200:
+                time.sleep(Static.API_REQUEST_DELAY)
+                return body
+            case 429:
+                app.logger.error("Daily limit exceeded | Cooldown 4 hours")
+            # Устанавливаем задержку если в запросе ошибка (например израсходован лимит)
+                time.sleep(14440)
+            case _:
+                return ['', ]
         
-        
-        # Устанавливаем задержку если в запросе ошибка (например израсходован лимит)
-        try:
-            app.logger.error(body['error'] + " cooldown 5min")
-            app.logger.error(status)
-            time.sleep(360)
-        except (AttributeError, KeyError, TypeError):
-            return body
-        
-        
-    
 def update_match_ids(info, matches):
     info.max_match_id = matches[0]["match_id"]
     db.session.commit()
